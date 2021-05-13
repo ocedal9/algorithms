@@ -9,7 +9,7 @@
     "nodemon": "^2.0.7"
   },
   "scripts": {
-    "01": "nodemon al01/function.js",
+    "nodemon": "nodemon al02/function.js",
     "test": "jest"
   },
   "author": "",
