@@ -1,12 +1,29 @@
-function printer(limit) {
-  let array = []
-  let number = 1
-  try {
-    ;(function recursive() {
-      array.length = --limit
-      console.log(number++)
-      recursive()
-    })()
-  } catch (e) {}
+let i = 0
+function log1() {
+  console.log(++i)
 }
-printer(100)
+function log10() {
+  log1()
+  log1()
+  log1()
+  log1()
+  log1()
+  log1()
+  log1()
+  log1()
+  log1()
+  log1()
+}
+function print100() {
+  log10()
+  log10()
+  log10()
+  log10()
+  log10()
+  log10()
+  log10()
+  log10()
+  log10()
+  log10()
+}
+print100()
