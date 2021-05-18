@@ -14,7 +14,7 @@ function log10() {
   log1()
   log1()
 }
-function print100() {
+function log100() {
   log10()
   log10()
   log10()
@@ -26,4 +26,4 @@ function print100() {
   log10()
   log10()
 }
-print100()
+log100()
