@@ -1,46 +1,30 @@
 const matrixFactory = require('./matrixFactory')
-// console.log(matrix(4, 5))
+
 function maxRec(matrix) {
-  //   console.log(matrix)
+  // console.log(matrix)
   let max = 0
-  let accMatrix = [matrix[0]]
-  let leftMatrix = []
-  let rightMatrix = []
-  for (let r = 1; r < matrix.length; r++) {
-    let accArray = []
-    for (let c = 0; c < matrix[r].length; c++) {
-      matrix[r][c] === 1
-        ? (accArray[c] = accMatrix[r - 1][c] + 1)
-        : (accArray[c] = 0)
-    }
-    accMatrix.push(accArray)
-  }
-  //   console.log('---->', accMatrix)
-  for (let h = 2; h < 3; h++) {
-    // let arr = accMatrix[h]
-    let arr = [2, 1, 5, 6, 2, 3]
-    console.log(arr)
-    let stack = [0]
-    let left = [0]
-    for (let b = 1; b < arr.length; b++) {
-      console.log('stack', stack)
-      //   arr[b] >= arr[b - 1] ? stack.pop() : 0
-      if (arr[b] < arr[stack[stack.length - 1]]) {
-        stack.pop()
-        // left.push(stack[stack.length - 1])
-        console.log('left', left)
-        // stack.push(b)
+  let heights = []
+  for (let row = 0; row < matrix.length; row++) {
+    let stack = []
+    for (let col = 0; col <= matrix[row].length; col++) {
+      if (matrix[row][col] === 1) {
+        heights[col] = row === 0 ? 1 : heights[col] + 1
+      } else {
+        heights[col] = 0
       }
-      left.push(stack[stack.length - 1] + 1)
-      stack.push(b)
+      while (stack.length && heights[col] <= heights[stack[stack.length - 1]]) {
+        var rectHeigth = heights[stack.pop()]
+        var rectwidth =
+          stack.length === 0 ? col : col - stack[stack.length - 1] - 1
+        max = Math.max(max, rectHeigth * rectwidth)
+      }
+      stack.push(col)
     }
   }
+  return max
 }
-const mat = [
-  [1, 0, 1, 0, 0],
-  [1, 0, 1, 1, 1],
-  [1, 1, 1, 1, 1],
-  [1, 0, 0, 1, 0],
-]
-maxRec(mat)
-//
+
+const matrix = matrixFactory(5, 6)
+const area = maxRec(matrix)
+console.log(matrix)
+console.log('maximum area = ', area)
