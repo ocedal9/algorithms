@@ -1,7 +1,6 @@
 const matrixFactory = require('./matrixFactory')
 
 function maxRec(matrix) {
-  // console.log(matrix)
   let max = 0
   let heights = []
   for (let row = 0; row < matrix.length; row++) {
