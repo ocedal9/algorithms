@@ -21,17 +21,18 @@ function zeroFun(mat) {
   }
   if (rowToZero) for (var m = 0; m < mat[0].length; m++) mat[0][m] = 0
   if (colToZero) for (var n = 0; n < mat.length; n++) mat[n][0] = 0
-  console.log(rowToZero, colToZero)
+  // console.log(rowToZero, colToZero)
   return mat
 }
 
-const matrix = [
-  [1, 1, 1, 0],
-  [1, 1, 0, 1],
-  [1, 1, 1, 1],
-  [0, 1, 1, 1],
-  [1, 1, 1, 1],
-]
+// const matrix = [
+//   [0, 1, 1, 0],
+//   [1, 1, 1, 1],
+//   [1, 1, 1, 1],
+//   [1, 1, 1, 1],
+//   [1, 1, 1, 1],
+// ]
 
-const result = zeroFun(matrix)
-console.log(result)
+// const result = zeroFun(matrix)
+// console.log(result)
+module.exports = zeroFun
