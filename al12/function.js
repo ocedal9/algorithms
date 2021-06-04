@@ -7,18 +7,18 @@ class CircularQ {
     this.length = 0
   }
   add(item) {
+    if (this.length >= this.size) throw new Error('queue already full')
     this.tail++
-    console.log(this.tail, this.size, this.tail % this.size)
+    this.queue[this.tail % this.size] = item
+    this.length++
+  }
+  getItem() {
+    if (this.length == 0) throw new Error('empty queue')
+    const item = this.queue[this.head % this.size]
+    this.queue[this.head % this.size] = null
+    this.head++
+    this.length--
+    return item
   }
 }
-
-const q = new CircularQ(5)
-q.add('a')
-q.add('b')
-q.add('c')
-q.add('d')
-q.add('e')
-q.add('f')
-q.add('g')
-
-console.log(q)
+module.exports = CircularQ
