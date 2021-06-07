@@ -1,5 +1,5 @@
 const { flattenRecursive, flattenIterative } = require('./function')
-describe('Functional', () => {
+describe('Recursive', () => {
   test('test case', () => {
     const input = [1, [2, 3, [4], [5, 6, [[7]]], 8], 9, 10]
     const result = flattenRecursive(input)
@@ -7,7 +7,7 @@ describe('Functional', () => {
   })
 })
 
-describe('Functional', () => {
+describe('Recursive', () => {
   test('test case with nested array', () => {
     const input = [[[[[[[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]]]]]]]
     const result = flattenRecursive(input)
@@ -15,7 +15,7 @@ describe('Functional', () => {
   })
 })
 
-describe('Functional', () => {
+describe('Recursive', () => {
   test('test case with diferent value types', () => {
     const input = [
       null,
@@ -40,7 +40,7 @@ describe('Functional', () => {
   })
 })
 
-describe('Functional', () => {
+describe('Recursive', () => {
   test('test case with simple array', () => {
     const input = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
     const result = flattenRecursive(input)
