@@ -7,18 +7,27 @@ class CircularQ {
     this.length = 0
   }
   add(item) {
-    if (this.length >= this.size) throw new Error('queue already full')
     this.tail++
+    if (
+      this.length + 1 > this.size &&
+      this.queue[this.tail % this.size] != null
+    ) {
+      // console.log((this.length + 1) % this.size)
+      // this.head = (this.length + 1) % this.size
+      // console.log(this.head)
+      this.head++
+    }
     this.queue[this.tail % this.size] = item
     this.length++
   }
   getItem() {
-    if (this.length == 0) throw new Error('empty queue')
     const item = this.queue[this.head % this.size]
+    if (item == null) throw new Error('empty queue')
     this.queue[this.head % this.size] = null
     this.head++
     this.length--
     return item
   }
 }
+
 module.exports = CircularQ
