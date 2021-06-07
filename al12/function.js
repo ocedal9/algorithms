@@ -11,12 +11,8 @@ class CircularQ {
     if (
       this.length + 1 > this.size &&
       this.queue[this.tail % this.size] != null
-    ) {
-      // console.log((this.length + 1) % this.size)
-      // this.head = (this.length + 1) % this.size
-      // console.log(this.head)
+    )
       this.head++
-    }
     this.queue[this.tail % this.size] = item
     this.length++
   }
