@@ -8,8 +8,6 @@ function sumBalance(input) {
       ? (leftSum += input[++left])
       : (rigthSum += input[--rigth])
   }
-  return leftSum !== rigthSum || input.length <= 1
-    ? 'there is not balanced sum'
-    : left
+  return leftSum !== rigthSum || input.length <= 1 ? -1 : left
 }
 module.exports = sumBalance

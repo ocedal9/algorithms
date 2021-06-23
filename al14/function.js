@@ -1,4 +1,8 @@
-function routes(rows, cols) {
+function routes(startX, startY, endX, endY) {
+  const rows = endX - startX
+  const cols = endY - startY
+  if (rows < 0 || cols < 0) throw new Error('End should be greater than start')
+  if (rows === 0 || cols === 0) return 1
   let mat = []
   for (let i = 0; i < rows; i++) {
     mat[i] = []

@@ -4,7 +4,7 @@ describe('not balaced', () => {
   test('input = []', () => {
     const input = []
     const result = sumBalance(input)
-    expect(result).toMatch('there is not balanced sum')
+    expect(result).toBe(-1)
   })
 })
 
@@ -12,7 +12,7 @@ describe('not balaced', () => {
   test('input = [1]', () => {
     const input = [1]
     const result = sumBalance(input)
-    expect(result).toMatch('there is not balanced sum')
+    expect(result).toBe(-1)
   })
 })
 
@@ -20,7 +20,7 @@ describe('not balaced', () => {
   test('input = [2, 4, 6, 8, 6, 4, 2]', () => {
     const input = [2, 4, 6, 8, 6, 4, 2]
     const result = sumBalance(input)
-    expect(result).toMatch('there is not balanced sum')
+    expect(result).toBe(-1)
   })
 })
 
