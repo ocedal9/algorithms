@@ -6,10 +6,10 @@
   "dependencies": {},
   "devDependencies": {
     "jest": "^26.6.3",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.8"
   },
   "scripts": {
-    "nodemon": "nodemon al24/function.js",
+    "nodemon": "nodemon b02/function.js",
     "other": "nodemon other.js",
     "test": "jest"
   },
