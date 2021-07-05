@@ -3,13 +3,15 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "word-list": "^3.1.0"
+  },
   "devDependencies": {
     "jest": "^26.6.3",
     "nodemon": "^2.0.8"
   },
   "scripts": {
-    "nodemon": "nodemon b02/function.js",
+    "nodemon": "nodemon b03/function.js",
     "other": "nodemon other.js",
     "test": "jest"
   },
