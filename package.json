@@ -12,7 +12,7 @@
     "nodemon": "^2.0.8"
   },
   "scripts": {
-    "nodemon": "nodemon d07/function.js",
+    "nodemon": "nodemon d09/function.js",
     "other": "nodemon other.js",
     "test": "jest"
   },
