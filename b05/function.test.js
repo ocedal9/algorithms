@@ -12,11 +12,11 @@ test('same letter', () => {
 
 test('lowercase and uppercase', () => {
   const result = permutation('a', 'A')
-  expect(result).toBeTruthy()
+  expect(result).toBeFalsy()
 })
 
 test('mixed letters, uppercase and lowercase', () => {
-  const result = permutation('AZqwerty', 'zaYTREWq')
+  const result = permutation('AZqwerty', 'ytrewqAZ')
   expect(result).toBeTruthy()
 })
 

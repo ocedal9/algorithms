@@ -28,10 +28,10 @@ class LinkedList {
 function getMiddle(ll) {
   if (ll.size == 2) return ll.head
   let slow = ll.head
-  let fast = ll.head ? (ll.head.next ? ll.head.next : undefined) : undefined
+  let fast = ll.head?.next
   while (fast) {
-    slow = slow ? slow.next : undefined
-    fast = fast ? (fast.next ? fast.next.next : undefined) : undefined
+    slow = slow?.next
+    fast = fast?.next?.next
   }
   return slow
 }

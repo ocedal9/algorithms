@@ -25,18 +25,22 @@ class LinkedList {
     this.size++
   }
 }
-
-function reverse(ll) {
+function palindrome(ll) {
   let pointer = ll.head
-  let last = null
-  let next = null
+  let stack = []
+
   while (pointer) {
-    next = pointer.next
-    pointer.next = last
-    last = pointer
-    pointer = next
+    stack.push(pointer.data)
+    pointer = pointer.next
   }
-  return last
+  let pal = true
+  pointer = ll.head
+  while (pal && pointer) {
+    const data = stack.pop()
+    if (data !== pointer.data) return false
+    pointer = pointer.next
+  }
+  return true
 }
 
-module.exports = { LinkedList, reverse }
+module.exports = { LinkedList, palindrome }

@@ -1,13 +1,13 @@
 function balanced(str) {
-  let open = 0
-  let close = 0
+  let count = 0
   for (let i = 0; i < str.length; i++) {
-    if (str[i] == '(') open++
-    if (str[i] == ')') close++
+    if (str[i] == '(') count++
+    if (str[i] == ')') count--
   }
-  const dif = open - close
-  if (dif === 0) return 'balanced'
-  if (dif > 0) return `${dif} missing closing parentheses`
-  if (dif < 0) return `${-1 * dif} missing open parentheses`
+  return count === 0
+    ? 'balanced'
+    : count > 0
+    ? `${count} missing closing parentheses`
+    : `${-1 * count} missing open parentheses`
 }
 module.exports = balanced

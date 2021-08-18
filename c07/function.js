@@ -8,25 +8,25 @@ class Node {
 
 class LinkedList {
   constructor() {
-    this.head = null
+    this.next = null
     this.size = 0
-  }
-
-  insertHead(data, prio) {
-    this.head = new Node(data, prio, this.head)
   }
   insertPrio(data, prio, loopNode = null) {
     let node = new Node(data, prio, loopNode)
-    if (this.head.prio <= prio) {
-      node.next = this.head
-      this.head = node
+    if (this.next === null) {
+      this.next = node
     } else {
-      let current = this.head
-      while (current.next && prio < current.next.prio) {
-        current = current.next
+      if (this.next.prio <= prio) {
+        node.next = this.next
+        this.next = node
+      } else {
+        let current = this.next
+        while (current.next && prio < current.next.prio) {
+          current = current.next
+        }
+        node.next = current.next
+        current.next = node
       }
-      node.next = current.next
-      current.next = node
     }
   }
 }
