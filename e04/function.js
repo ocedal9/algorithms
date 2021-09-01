@@ -8,7 +8,6 @@ let Node = function () {
     return this.end
   }
 }
-
 let Trie = function () {
   this.root = new Node()
   this.add = function (input, node = this.root) {
@@ -25,5 +24,4 @@ let Trie = function () {
     }
   }
 }
-
 module.exports = Trie
