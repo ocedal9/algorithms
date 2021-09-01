@@ -10,12 +10,17 @@ test('4 pairs of parentheses', () => {
   expect(result).toMatch(/balanced/)
 })
 
+test('balanced but wrong order', () => {
+  const result = balanced('))((')
+  expect(result).toBeFalsy()
+})
+
 test('missing 1 open parentheses', () => {
   const result = balanced(')()()()')
-  expect(result).toMatch('1 missing open parentheses')
+  expect(result).toBeFalsy()
 })
 
 test('missing 1 closing parentheses', () => {
   const result = balanced('(()()()')
-  expect(result).toMatch('1 missing closing parentheses')
+  expect(result).toBeFalsy()
 })

@@ -10,14 +10,19 @@ test('same letter', () => {
   expect(result).toBeTruthy()
 })
 
-test('lowercase and uppercase', () => {
-  const result = permutation('a', 'A')
-  expect(result).toBeFalsy()
+test('mixed letters', () => {
+  const result = permutation('abcbabccc', 'aabbbcccc')
+  expect(result).toBeTruthy()
 })
 
 test('mixed letters, uppercase and lowercase', () => {
   const result = permutation('AZqwerty', 'ytrewqAZ')
   expect(result).toBeTruthy()
+})
+
+test('lowercase and uppercase', () => {
+  const result = permutation('a', 'A')
+  expect(result).toBeFalsy()
 })
 
 test('different lengths', () => {
