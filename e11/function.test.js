@@ -35,7 +35,7 @@ test('should be 3 intersections', () => {
   expect(result).toBe(3)
 })
 
-test('should be 3 intersections', () => {
+test('should be 2 intersections', () => {
   const lines = [
     [
       [1, 1],

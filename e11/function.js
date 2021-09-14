@@ -65,20 +65,16 @@ class Point {
 }
 function intersections(lines) {
   let pointsArr = []
-  let segment = []
   for (let i = 0; i < lines.length; i++) {
     let line = [...lines[i]]
     if (line[0][0] > line[1][0]) {
       ;[line[0], line[1]] = [line[1], line[0]]
     }
-    segment.push(line)
     for (let j = 0; j < 2; j++) {
-      let point
-      if (j == 0) {
-        point = new Point(line[0][0], line[0][1], i, true)
-      } else {
-        point = new Point(line[1][0], line[1][1], i)
-      }
+      let point =
+        j == 0
+          ? new Point(line[0][0], line[0][1], i, true)
+          : new Point(line[1][0], line[1][1], i)
       pointsArr.push(point)
     }
   }
